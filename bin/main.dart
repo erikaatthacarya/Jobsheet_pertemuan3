@@ -1,11 +1,13 @@
 import 'dart:io';
 
+int faktorial(int n) {
+  if (n <= 1) return 1;
+  return n * faktorial(n - 1); // versi rekursif
+}
+
 void main() {
-  stdout.write("Masukkan angka pertama: ");
-  int a = int.parse(stdin.readLineSync()!);
+  stdout.write("Masukkan bilangan untuk faktorial: ");
+  int n = int.parse(stdin.readLineSync()!);
 
-  stdout.write("Masukkan angka kedua: ");
-  int b = int.parse(stdin.readLineSync()!);
-
-  print("Kamu memasukkan angka $a dan $b");
+  print("Faktorial dari $n = ${faktorial(n)}");
 }
